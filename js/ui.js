@@ -38,3 +38,9 @@ export function initHeatmapToggle(map) {
         }
     };
 }
+export function initHeatmapHistory(map) {
+    const btn = document.getElementById("play-history");
+    if (!btn) return;
+
+    btn.onclick = () => playHeatmapHistory(map);
+}
