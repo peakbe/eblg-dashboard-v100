@@ -274,3 +274,140 @@ h2 {
     font-size: 14px;
     text-shadow: 0 0 4px black;
 }
+/* ======================================================
+   RESPONSIVE PRO+ (MOBILE & TABLET)
+====================================================== */
+
+/* ----------- TABLETTES (≤ 1024px) ----------- */
+@media (max-width: 1024px) {
+
+    .sidebar {
+        width: 240px;
+    }
+
+    .detail-panel {
+        width: 220px;
+    }
+
+    .fids-row {
+        font-size: 12px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .float-btn {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}
+
+
+/* ----------- SMARTPHONES (≤ 768px) ----------- */
+@media (max-width: 768px) {
+
+    /* Sidebar devient un drawer */
+    .sidebar {
+        width: 240px;
+        transform: translateX(-240px);
+        position: fixed;
+        z-index: 9999;
+    }
+
+    .sidebar-collapsed {
+        transform: translateX(0);
+    }
+
+    .sidebar-toggle {
+        right: -36px;
+        top: 10px;
+    }
+
+    /* Panneau détail devient un drawer à droite */
+    .detail-panel {
+        width: 240px;
+        transform: translateX(240px);
+        position: fixed;
+        z-index: 9999;
+    }
+
+    .detail-panel.hidden {
+        transform: translateX(240px);
+    }
+
+    .detail-panel:not(.hidden) {
+        transform: translateX(0);
+    }
+
+    /* Carte prend tout l’écran */
+    #map {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    /* FIDS lisible sur mobile */
+    .fids-row {
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 4px;
+        font-size: 12px;
+    }
+
+    .fids-row span:nth-child(3),
+    .fids-row span:nth-child(4) {
+        opacity: 0.8;
+        font-size: 11px;
+    }
+
+    /* Boutons flottants repositionnés */
+    .floating-buttons {
+        bottom: 12px;
+        left: 12px;
+        gap: 8px;
+    }
+
+    .float-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    /* Debug panel réduit */
+    .debug-panel {
+        bottom: 12px;
+        right: 12px;
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+}
+
+
+/* ----------- PETITS SMARTPHONES (≤ 480px) ----------- */
+@media (max-width: 480px) {
+
+    h2 {
+        font-size: 14px;
+    }
+
+    .data-block {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .sono-item {
+        font-size: 12px;
+        padding: 5px 6px;
+    }
+
+    .fids-row {
+        font-size: 11px;
+        padding: 5px 6px;
+    }
+
+    .float-btn {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+
+    .sidebar-toggle {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+    }
+}
